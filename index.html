@@ -57,11 +57,13 @@
 	<link rel="stylesheet" href="./assets/css/owl.carousel.min.css" type="text/css">
 	<link rel="stylesheet" href="./assets/css/owl.theme.default.min.css" type="text/css">
 	<!-- Salvattore -->
-	<link rel="stylesheet" href="./assets/css/salvattore.css" type="text/css">
+	<!--<link rel="stylesheet" href="./assets/css/salvattore.css" type="text/css">-->
 	<!-- Theme Style -->
 	<link rel="stylesheet" href="./assets/css/style.css" type="text/css">
 	<!-- Modernizr JS -->
 	<script src="./assets/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR email send -->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="./js/respond.min.js"></script>
@@ -505,36 +507,32 @@
 				<div id="fh5co-subscribe">
 					<div class="container">
 						<div class="row animate-box">
-							<form action="#" method="post">
 								<div class="col-md-3 col-sm-3">
 									<div class="form-group">
-										<input type="text" class="form-control" placeholder="First Name">
+										<input id="firstName" type="text" class="form-control" placeholder="First Name">
 									</div>
 								</div>
 								<div class="col-md-3 col-sm-3">
 									<div class="form-group">
-										<input type="text" class="form-control" placeholder="Last Name">
+										<input id="lastName" type="text" class="form-control" placeholder="Last Name">
 									</div>
 								</div>
 								<div class="col-md-3 col-sm-3">
 									<div class="form-group">
-										<input type="email" class="form-control" placeholder="Email">
+										<input id="mail" type="email" class="form-control" placeholder="Email">
 									</div>
 								</div>
 								<div class="col-md-3 col-sm-3">
 									<div class="form-group">
-										<input type="submit" class="btn btn-primary" value="Subscribe">
+										<input id="senderMail" type="submit" class="btn btn-primary" value="send Email">
 									</div>
 								</div>
-							</form>
 						</div>
 					</div>
 				</div>
 
-
 			</div>
 		</div>
-
 		<footer id="fh5co-footer" style="">
 			<div class="fh5co-overlay"></div>
 			<div class="fh5co-footer-content">
@@ -608,6 +606,8 @@
 	<script src="./assets/js/jquery.countTo.js"></script>
 	<!-- Main JS -->
 	<script src="./assets/js/main.js"></script>
+	<!-- Sender mail JS -->
+	<script src="./assets/js/sendMail.js"></script>
 
 	
 
