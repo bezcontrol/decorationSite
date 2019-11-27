@@ -2,27 +2,33 @@ document.getElementById("senderMail").addEventListener("click", sendEmail, false
 
 function sendEmail(){
 
-	let firstName = document.getElementById('firstName');
+    let meilToSend = '*****'; // corporate mail should be here
+    let password = '****'; // corporate mail password should be here
+
+    let firstName = document.getElementById('firstName');
 	let lastName = document.getElementById('lastName');
 	let email = document.getElementById('mail');
-        let emptyString = "";
+    
+    let host = 'smtp.gmail.com';
+    let emptyString = '';
+    let space = ' ';
+    let Ok = 'OK';
+    let subject = 'Alone at home order';
+    let bodySentence = ' Want to make order ';
 
-	(function(){
-		emailjs.init("user_uA3tJqibLCPfQlnTJGdGD"); //Insert your user ID 
-	})();
+    Email.send({
+    	Host : host,
+    	Username : meilToSend,
+    	Password : password,
+    	To : meilToSend,
+    	From : email.value,
+    	Subject : subject,
+    	Body : firstName.value + space + lastName.value + bodySentence + email.value
+    }).then(
+    message =>
+    console.log(message));
 
-	var templateParams = {
-		name: email.value,
-		notes: firstName.value + " " + lastName.value + 'want to make an order!'
-	};
-
-	emailjs.send('gmail', 'template_4LeO82KY', templateParams) //Insert your email service ID and email template ID
-	.then(function(response) {
-		console.log('SUCCESS!', response.status, response.text);
-                email.value = emptyString ;
-                lastName.value = emptyString;
-                firstName.value = emptyString;
-	}, function(error) {
-		console.log('FAILED...', error);
-	});
+    email.value = emptyString;
+    firstName.value = emptyString;
+    lastName.value = emptyString;
 }
