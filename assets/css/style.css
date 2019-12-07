@@ -8986,3 +8986,8 @@ a > img.fh5co-align-center {
      margin-left: auto;
     margin-right: auto;
 }
+
+.owl-carousel .owl-item img {
+    height: 500px;
+    width: 600px;
+}
